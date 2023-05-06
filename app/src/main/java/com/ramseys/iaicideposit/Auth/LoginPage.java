@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.ramseys.iaicideposit.MainActivity;
 import com.ramseys.iaicideposit.R;
+import com.ramseys.iaicideposit.UserScreen.EnrolPage;
 
 public class LoginPage extends AppCompatActivity implements View.OnClickListener{
     Button login;
@@ -30,7 +31,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.login:
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, EnrolPage.class));
                 finish();
                 break;
             case R.id.signUp:

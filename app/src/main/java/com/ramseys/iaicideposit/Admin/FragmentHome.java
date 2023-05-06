@@ -1,4 +1,4 @@
-package com.ramseys.iaicideposit;
+package com.ramseys.iaicideposit.Admin;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.ramseys.iaicideposit.R;
 
 public class FragmentHome extends Fragment {
     @Nullable

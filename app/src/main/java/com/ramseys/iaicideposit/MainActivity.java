@@ -10,6 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.ramseys.iaicideposit.Admin.FragmentHome;
+import com.ramseys.iaicideposit.Admin.FragmentList;
+import com.ramseys.iaicideposit.Admin.FragmentProfil;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView navbar;
@@ -22,23 +25,20 @@ public class MainActivity extends AppCompatActivity {
         navbar.setOnNavigationItemSelectedListener(navListner);
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListner = new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment selectedFrag = null;
-            switch (item.getItemId()){
-                case R.id.home:
-                    selectedFrag = new FragmentHome();
-                    break;
-                case R.id.search:
-                    selectedFrag = new FragmentList();
-                    break;
-                case R.id.profil:
-                    selectedFrag = new FragmentProfil();
-                    break;
-            }
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFrag).commit();
-            return true;
+    private BottomNavigationView.OnNavigationItemSelectedListener navListner = item -> {
+        Fragment selectedFrag = null;
+        switch (item.getItemId()){
+            case R.id.home:
+                selectedFrag = new FragmentHome();
+                break;
+            case R.id.search:
+                selectedFrag = new FragmentList();
+                break;
+            case R.id.profil:
+                selectedFrag = new FragmentProfil();
+                break;
         }
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFrag).commit();
+        return true;
     };
 }
