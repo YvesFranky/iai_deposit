@@ -13,8 +13,8 @@
         android:layout_height="102dp"
         android:layout_above="@+id/cardView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="5dp"
         android:src="@drawable/mainbkg"
         app:civ_border_color="@color/white"
         app:civ_border_width="4dp" />
@@ -50,11 +50,11 @@
                 android:layout_height="wrap_content"
                 android:text="Informations Candidat suite"
                 android:textAlignment="center"
-                android:textColor="@color/primary"
+                android:textColor="#448AFF"
                 android:textSize="20dp"
                 android:textStyle="bold"
 
-                />
+                tools:ignore="TextContrastCheck" />
 
 
             <EditText
@@ -66,11 +66,13 @@
                 android:drawableLeft="@drawable/ic_baseline_person_24"
                 android:drawableRight="@drawable/ic_baseline_edit_24"
                 android:drawablePadding="10dp"
-                android:enabled="false"
+                android:enabled="true"
                 android:hint="Nom tuteur"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textColorHint="#5C6BC0"
+                tools:ignore="TextContrastCheck" />
 
             <EditText
                 android:id="@+id/numTuteur"
@@ -81,11 +83,14 @@
                 android:drawableLeft="@drawable/ic_baseline_phone_24"
                 android:drawableRight="@drawable/ic_baseline_edit_24"
                 android:drawablePadding="10dp"
-                android:enabled="false"
+                android:enabled="true"
                 android:hint="Numero Tuteur"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textColorHint="#5C6BC0"
+                tools:ignore="TextContrastCheck,TextContrastCheck"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/document"
@@ -94,13 +99,14 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/ic_baseline_receipt_24"
-                android:drawableRight="@drawable/ic_baseline_attach_file_24"
+                android:drawableEnd="@drawable/ic_baseline_attach_file_24"
                 android:drawablePadding="10dp"
                 android:enabled="true"
                 android:hint="Documents"
                 android:inputType="text"
                 android:padding="8dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textColorHint="#5C6BC0" />
 
             <EditText
                 android:id="@+id/lieuDepot"
@@ -111,11 +117,12 @@
                 android:drawableLeft="@drawable/ic_baseline_edit_location_24"
                 android:drawableRight="@drawable/ic_baseline_edit_24"
                 android:drawablePadding="10dp"
-                android:enabled="false"
+                android:enabled="true"
                 android:hint="Centre de composition"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/lieuForm"
@@ -126,11 +133,14 @@
                 android:drawableLeft="@drawable/ic_baseline_school_24"
                 android:drawableRight="@drawable/ic_baseline_edit_24"
                 android:drawablePadding="10dp"
-                android:enabled="false"
+                android:enabled="true"
                 android:hint="Centre de formation"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textColorHint="#5C6BC0"
+                tools:ignore="TextContrastCheck"
+                android:autofillHints="" />
 
             <Button
                 android:id="@+id/upload"
@@ -146,7 +156,7 @@
                 android:id="@+id/text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:text="@string/confirm"
                 android:textAlignment="center"
                 android:textColor="@color/primary"
