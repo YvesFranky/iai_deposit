@@ -28,6 +28,8 @@ public class EnrolPage extends AppCompatActivity implements View.OnTouchListener
     public static Uri pdfData;
     private  final int REQ =1;
     String donwloadUri = "";
+
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,15 +61,9 @@ public class EnrolPage extends AppCompatActivity implements View.OnTouchListener
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.upload:
-                startActivity(new Intent(this, MainActivity.class));
-                break;
-            case R.id.document:
-                Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show();
-                break;
-            default:
-                Toast.makeText(this, "Oups", Toast.LENGTH_SHORT).show();
+        if (v.getId() == R.id.upload){
+
+                startActivity(new Intent(this, CandidatHome.class));
         }
 
     }

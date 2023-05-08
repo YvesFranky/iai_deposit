@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">IAI CIDeposit</string>
+    <string name="select_item">Centre de Formation</string>
     <string name="confirm">"J'approve que les documents ci-joints sont ceux demander pour le concours.En cas echeant je ne serais pas contre le renvoit du dossier "</string>
 </resources>
