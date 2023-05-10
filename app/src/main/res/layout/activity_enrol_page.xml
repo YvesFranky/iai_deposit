@@ -13,8 +13,8 @@
         android:layout_height="102dp"
         android:layout_above="@+id/cardView"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
         android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"
         android:src="@drawable/mainbkg"
         app:civ_border_color="@color/white"
         app:civ_border_width="4dp" />

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainbkg"
+    android:layout_gravity="bottom"
+    tools:context=".CandidatDetailInfo">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="406dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/custom_edittext"
+        android:minHeight="400dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+            <TextView
+                android:id="@+id/loginText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Informations Candidat"
+                android:textAlignment="center"
+                android:textColor="#448AFF"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                tools:ignore="TextContrastCheck" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                >
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/mainbkg"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="4dp" />
+
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/imageView"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    tools:text="Amadou wanie Benjamain" />
+
+                <TextView
+                    android:id="@+id/filiere"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/name"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toEndOf="@id/imageView"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    tools:text="Génie Logiciel" />
+
+                <TextView
+                    android:id="@+id/telephone"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/filiere"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toEndOf="@id/imageView"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    tools:text="657828457" />
+                <TextView
+                    android:id="@+id/dateNaiss"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/telephone"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toEndOf="@id/imageView"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    tools:text="17-02-2002" />
+
+                <TextView
+                    android:id="@+id/centreForm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/name"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toEndOf="@id/filiere"
+                    android:gravity="right"
+                    android:padding="5dp"
+                    android:textColor="@color/primary"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    tools:text=" Centre Garoua" />
+                <TextView
+                    android:id="@+id/centreExamen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/centreForm"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toEndOf="@id/telephone"
+                    android:gravity="right"
+                    android:padding="5dp"
+                    android:textColor="@color/primary"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    tools:text=" Examen MAROUA" />
+            </RelativeLayout>
+
+
+
+
+            <EditText
+                android:id="@+id/tutorName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/ic_baseline_person_24"
+                android:drawablePadding="10dp"
+                android:enabled="false"
+                android:hint="Nom tuteur"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHint="#5C6BC0"
+                tools:ignore="TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/tutorNumber"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/ic_baseline_phone_24"
+                android:drawablePadding="10dp"
+                android:enabled="false"
+                android:hint="Numero Tuteur"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHint="#5C6BC0"
+                tools:ignore="TextContrastCheck,TextContrastCheck"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/document"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/ic_baseline_receipt_24"
+                android:drawableEnd="@drawable/ic_baseline_picture_as_pdf_24"
+                android:drawablePadding="10dp"
+                android:enabled="false"
+                android:hint="Documents"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHint="#5C6BC0" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/invalide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custom_edittext"
+                    android:backgroundTint="@color/primary"
+                    android:text="INVALIDE"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/valide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custom_edittext"
+                    android:backgroundTint="@color/primary"
+                    android:text="Valide"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

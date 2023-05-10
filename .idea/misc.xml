@@ -11,6 +11,7 @@
         <entry key="app/src/main/res/drawable/loginbkg.xml" value="0.174" />
         <entry key="app/src/main/res/drawable/mainbkg.xml" value="0.22" />
         <entry key="app/src/main/res/drawable/transparent_background.xml" value="0.287" />
+        <entry key="app/src/main/res/layout/activity_candidat_detail_ifon.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_candidat_home.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/activity_enrol_page.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_enrol_page2.xml" value="0.3484375" />
@@ -22,6 +23,7 @@
         <entry key="app/src/main/res/layout/fragment_profil.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.34739583333333335" />
+        <entry key="app/src/main/res/layout/list_model.xml" value="0.30570652173913043" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.3484375" />
       </map>
     </option>

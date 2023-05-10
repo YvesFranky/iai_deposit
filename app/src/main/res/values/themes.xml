@@ -3,7 +3,7 @@
     <style name="Theme.IAICIDeposit" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#DF8321</item>
-        <item name="colorPrimaryDark">#009688</item>
+        <item name="colorPrimaryDark">@color/primary</item>
         <item name="colorAccent">@color/teal_200</item>
         <!-- Customize your theme here. -->
     </style>
