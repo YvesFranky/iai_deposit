@@ -17,21 +17,21 @@
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
+        android:layout_margin="20dp"
         android:background="@drawable/custom_edittext">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_gravity="center_horizontal"
-            android:padding="24dp">
+            android:padding="14dp">
             
             
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Register"
+                android:text="Enregistrement"
                 android:id="@+id/loginText"
                 android:textSize="36dp"
                 android:textAlignment="center"
@@ -50,7 +50,18 @@
                 android:hint="User name"
                 android:padding="8dp"
                 android:textColor="@color/black"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="10dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/login"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/ic_baseline_person_24"
+                android:drawablePadding="10dp"
+                android:hint="Login"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -63,18 +74,20 @@
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:inputType="textPassword"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="10dp"/>
+
             <EditText
+                android:id="@+id/date"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/date"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/ic_baseline_date_range_24"
                 android:drawablePadding="10dp"
-                android:padding="8dp"
-                android:textColor="@color/black"
+                android:hint="@string/dateNotice"
                 android:inputType="date"
-                android:layout_marginTop="20dp"/>
+                android:padding="8dp"
+                android:textColor="@color/black" />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -86,7 +99,7 @@
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:inputType="text"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="10dp"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -98,7 +111,7 @@
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:inputType="phone"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="10dp"/>
 
 
 
@@ -108,7 +121,7 @@
                 android:id="@+id/register"
                 android:text="Register"
                 android:textSize="18sp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="25dp"
                 android:backgroundTint="@color/primary"
                 android:background="@drawable/custom_edittext"

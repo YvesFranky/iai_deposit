@@ -6,13 +6,25 @@ public class Candidat extends Users{
     private int tutorTel;
     private String lieuConcours;
     private String lieuFormation;
+    private String uid;
 
-    public Candidat(String id, String name, String fisrtName, String dateNais, String lieuNaiss, int tel, String tutorName, int tutorTel, String lieuConcours, String lieuFormation ) {
-        super(id, name, fisrtName, dateNais, lieuNaiss, tel);
+    public Candidat(String id, String name, String dateNais, String lieuNaiss, String tel, String tutorName, int tutorTel, String lieuConcours, String lieuFormation ) {
+        super(id, name, dateNais, lieuNaiss, tel);
         this.tutorName = tutorName;
         this.tutorTel = tutorTel;
         this.lieuConcours = lieuConcours;
         this.lieuFormation = lieuFormation;
+    }
+
+    public Candidat() {
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public String getTutorName() {
