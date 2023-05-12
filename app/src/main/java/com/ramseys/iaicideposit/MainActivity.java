@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         navbar = findViewById(R.id.bottomAppbar);
         navbar.setOnNavigationItemSelectedListener(navListner);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentHome()).commit();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListner = item -> {

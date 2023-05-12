@@ -6,4 +6,5 @@
     <string name="Confirmyes">Oui!</string>
     <string name="Confirmno">Non!</string>
     <string name="confirm">"J'approve que les documents ci-joints sont ceux demander pour le concours.En cas echeant je ne serais pas contre le renvoit du dossier "</string>
+    <string name="dateNotice">Choisir une date</string>
 </resources>

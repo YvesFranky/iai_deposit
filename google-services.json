@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1016679372885",
+    "project_id": "iai-deposit",
+    "storage_bucket": "iai-deposit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1016679372885:android:460719c4a3b61237815cdc",
+        "android_client_info": {
+          "package_name": "com.ramseys.iaicideposit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1016679372885-1c2cnl1s442nprltss6nhcov1gnejsgr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ramseys.iaicideposit",
+            "certificate_hash": "ad23a78f3109146a7e6b215220fd604ae190742a"
+          }
+        },
+        {
+          "client_id": "1016679372885-iqprna5c6qg2fbmgpmaibe6d7lf411a5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3vmXjsp2--N9eBcW6FlC5V9NtBmp9XtE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1016679372885-iqprna5c6qg2fbmgpmaibe6d7lf411a5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

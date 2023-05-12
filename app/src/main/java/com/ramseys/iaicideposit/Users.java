@@ -1,23 +1,58 @@
 package com.ramseys.iaicideposit;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Users {
 
     private String id;
     private String name;
-    private  String fisrtName;
+    private String image;
     private String dateNais;
     private String lieuNaiss;
-    private int tel;
+    private String tel;
     private String login;
     private  String passWord;
+    private boolean isAdmin;
 
-    public Users(String id, String name, String fisrtName, String dateNais, String lieuNaiss, int tel) {
+    public Users(String id, String name,  String dateNais, String lieuNaiss, String tel) {
         this.id = id;
         this.name = name;
-        this.fisrtName = fisrtName;
         this.dateNais = dateNais;
         this.lieuNaiss = lieuNaiss;
         this.tel = tel;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Users() {
+    }
+
+    public Map<String, Object> fromJson(){
+        Map<String, Object> userFromJson = new HashMap<>();
+        userFromJson.put("uid", this.id);
+        userFromJson.put("uname", this.name);
+        userFromJson.put("login", this.login);
+        userFromJson.put("password", this.passWord);
+        userFromJson.put("dateNaiss", this.dateNais);
+        userFromJson.put("lieuNais", this.lieuNaiss);
+        userFromJson.put("Tel", this.tel);
+
+        return userFromJson;
     }
 
     public void UserLogin(String login, String passWord){
@@ -41,13 +76,6 @@ public class Users {
         this.name = name;
     }
 
-    public String getFisrtName() {
-        return fisrtName;
-    }
-
-    public void setFisrtName(String fisrtName) {
-        this.fisrtName = fisrtName;
-    }
 
     public String getDateNais() {
         return dateNais;
@@ -65,11 +93,11 @@ public class Users {
         this.lieuNaiss = lieuNaiss;
     }
 
-    public int getTel() {
+    public String getTel() {
         return tel;
     }
 
-    public void setTel(int tel) {
+    public void setTel(String tel) {
         this.tel = tel;
     }
 

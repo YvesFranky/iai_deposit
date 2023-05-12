@@ -76,7 +76,7 @@ public class EnrolPage extends AppCompatActivity implements View.OnTouchListener
                 GetFile();
                 break;
         }
-        return false;
+        return true;
     }
 
     private void selectPdf(){
