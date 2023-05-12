@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <candidatItem
+    <item
         android:id="@+id/home"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="Home"/>
-    <candidatItem
+    <item
         android:id="@+id/search"
         android:icon="@drawable/ic_baseline_search_24"
         android:title="Searcch"/>
-    <candidatItem
+    <item
         android:id="@+id/profil"
         android:icon="@drawable/ic_baseline_person_24"
         android:title="Profil"/>
