@@ -95,6 +95,7 @@
                     android:textColor="@color/black"
                     android:textSize="12dp"
                     tools:text="657828457" />
+
                 <TextView
                     android:id="@+id/dateNaiss"
                     android:layout_width="170dp"
@@ -120,6 +121,7 @@
                     android:textSize="10dp"
                     android:textStyle="bold"
                     tools:text=" Centre Garoua" />
+
                 <TextView
                     android:id="@+id/centreExamen"
                     android:layout_width="wrap_content"
@@ -134,6 +136,22 @@
                     android:textSize="10dp"
                     android:textStyle="bold"
                     tools:text=" Examen MAROUA" />
+
+                <TextView
+                    android:id="@+id/lieuNaiss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/dateNaiss"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@id/imageView"
+                    android:gravity="right"
+                    android:padding="5dp"
+                    android:textColor="@color/primary"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    tools:text=" Pitoa" />
             </RelativeLayout>
 
 

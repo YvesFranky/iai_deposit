@@ -24,4 +24,13 @@
         app:indicatorColor="@color/white"
         android:layout_marginTop="20dp"
         android:indeterminate="true"/>
+
+    <TextView
+        android:id="@+id/chargement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="TextView" />
 </LinearLayout>

@@ -1,34 +1,79 @@
 package com.ramseys.iaicideposit;
 
+import com.google.firebase.firestore.PropertyName;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class Users {
 
-    private String id;
-    private String name;
+    private String uid;
+    private String uname;
     private String image;
-    private String dateNais;
+    private String dateNaiss;
     private String lieuNaiss;
-    private String tel;
+    private String Tel;
     private String login;
-    private  String passWord;
+    private  String password;
     private boolean isAdmin;
+    private boolean isRegister;
 
-    public Users(String id, String name,  String dateNais, String lieuNaiss, String tel) {
-        this.id = id;
-        this.name = name;
-        this.dateNais = dateNais;
+    public Users(String uid, String uname, String dateNaiss, String lieuNaiss, String tel) {
+        this.uid = uid;
+        this.uname = uname;
+        this.dateNaiss = dateNaiss;
         this.lieuNaiss = lieuNaiss;
-        this.tel = tel;
+        this.Tel = tel;
     }
 
-    public boolean isAdmin() {
-        return isAdmin;
+
+
+    public Users() {
     }
 
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
+    public Map<String, Object> fromJson(){
+        Map<String, Object> userFromJson = new HashMap<>();
+        userFromJson.put("uid", this.uid);
+        userFromJson.put("uname", this.uname);
+        userFromJson.put("login", this.login);
+        userFromJson.put("password", this.password);
+        userFromJson.put("dateNaiss", this.dateNaiss);
+        userFromJson.put("lieuNais", this.lieuNaiss);
+        userFromJson.put("Tel", this.Tel);
+        userFromJson.put("isAdmin", this.isAdmin);
+        userFromJson.put("isRegister", this.isRegister);
+
+        return userFromJson;
+    }
+
+
+    public void UserLogin(String login, String passWord){
+        this.login = login;
+        this.password = passWord;
+    }
+    @PropertyName("isRegister")
+    public boolean isRegister() {
+        return isRegister;
+    }
+    @PropertyName("isRegister")
+    public void setRegister(boolean register) {
+        isRegister = register;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getUname() {
+        return uname;
+    }
+
+    public void setUname(String uname) {
+        this.uname = uname;
     }
 
     public String getImage() {
@@ -39,50 +84,12 @@ public class Users {
         this.image = image;
     }
 
-    public Users() {
+    public String getDateNaiss() {
+        return dateNaiss;
     }
 
-    public Map<String, Object> fromJson(){
-        Map<String, Object> userFromJson = new HashMap<>();
-        userFromJson.put("uid", this.id);
-        userFromJson.put("uname", this.name);
-        userFromJson.put("login", this.login);
-        userFromJson.put("password", this.passWord);
-        userFromJson.put("dateNaiss", this.dateNais);
-        userFromJson.put("lieuNais", this.lieuNaiss);
-        userFromJson.put("Tel", this.tel);
-
-        return userFromJson;
-    }
-
-    public void UserLogin(String login, String passWord){
-        this.login = login;
-        this.passWord = passWord;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
-    public String getDateNais() {
-        return dateNais;
-    }
-
-    public void setDateNais(String dateNais) {
-        this.dateNais = dateNais;
+    public void setDateNaiss(String dateNaiss) {
+        this.dateNaiss = dateNaiss;
     }
 
     public String getLieuNaiss() {
@@ -94,11 +101,11 @@ public class Users {
     }
 
     public String getTel() {
-        return tel;
+        return Tel;
     }
 
     public void setTel(String tel) {
-        this.tel = tel;
+        Tel = tel;
     }
 
     public String getLogin() {
@@ -109,11 +116,19 @@ public class Users {
         this.login = login;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    @PropertyName("isAdmin")
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+    @PropertyName("isAmdin")
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 }

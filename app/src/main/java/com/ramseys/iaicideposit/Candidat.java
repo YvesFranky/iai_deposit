@@ -1,22 +1,43 @@
 package com.ramseys.iaicideposit;
 
-public class Candidat extends Users{
+import com.google.firebase.firestore.PropertyName;
+
+public class Candidat{
 
     private String tutorName;
-    private int tutorTel;
+    private String tutorTel;
     private String lieuConcours;
     private String lieuFormation;
+    private String filiere;
     private String uid;
+    private boolean isCandidat;
 
-    public Candidat(String id, String name, String dateNais, String lieuNaiss, String tel, String tutorName, int tutorTel, String lieuConcours, String lieuFormation ) {
-        super(id, name, dateNais, lieuNaiss, tel);
+
+    public Candidat( String tutorName, String tutorTel, String lieuConcours, String lieuFormation, String filiere ) {
         this.tutorName = tutorName;
         this.tutorTel = tutorTel;
         this.lieuConcours = lieuConcours;
         this.lieuFormation = lieuFormation;
+        this.filiere = filiere;
     }
 
     public Candidat() {
+    }
+
+    public String getFiliere() {
+        return filiere;
+    }
+
+    public void setFiliere(String filiere) {
+        this.filiere = filiere;
+    }
+    @PropertyName("isCandidat")
+    public boolean isCandidat() {
+        return isCandidat;
+    }
+    @PropertyName("isCandidat")
+    public void setCandidat(boolean candidat) {
+        isCandidat = candidat;
     }
 
     public String getUid() {
@@ -35,11 +56,11 @@ public class Candidat extends Users{
         this.tutorName = tutorName;
     }
 
-    public int getTutorTel() {
+    public String getTutorTel() {
         return tutorTel;
     }
 
-    public void setTutorTel(int tutorTel) {
+    public void setTutorTel(String tutorTel) {
         this.tutorTel = tutorTel;
     }
 
@@ -58,4 +79,6 @@ public class Candidat extends Users{
     public void setLieuFormation(String lieuFormation) {
         this.lieuFormation = lieuFormation;
     }
+
+
 }

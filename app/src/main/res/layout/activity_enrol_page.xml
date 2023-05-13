@@ -9,6 +9,7 @@
     tools:context=".UserScreen.EnrolPage">
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView"
         android:layout_width="130dp"
         android:layout_height="102dp"
         android:layout_above="@+id/cardView"
@@ -50,10 +51,9 @@
                 android:layout_height="wrap_content"
                 android:text="Informations Candidat suite"
                 android:textAlignment="center"
-                android:textColor="#448AFF"
+                android:textColor="@color/primary"
                 android:textSize="20dp"
                 android:textStyle="bold"
-
                 tools:ignore="TextContrastCheck" />
 
 
@@ -64,11 +64,11 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/ic_baseline_person_24"
-                android:drawableRight="@drawable/ic_baseline_edit_24"
+                android:drawableRight="@drawable/custom_edittext"
                 android:drawablePadding="10dp"
                 android:enabled="true"
                 android:hint="Nom tuteur"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHint="#5C6BC0"
@@ -85,7 +85,7 @@
                 android:drawablePadding="10dp"
                 android:enabled="true"
                 android:hint="Numero Tuteur"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHint="#5C6BC0"
@@ -117,11 +117,11 @@
                 android:drawableLeft="@drawable/ic_baseline_edit_location_24"
                 android:drawableRight="@drawable/ic_baseline_edit_24"
                 android:drawablePadding="10dp"
-                android:enabled="true"
                 android:hint="Centre de composition"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:padding="8dp"
                 android:textColor="@color/black"
+                android:textColorHint="#5C6BC0"
                 android:autofillHints="" />
 
             <EditText
@@ -135,7 +135,24 @@
                 android:drawablePadding="10dp"
                 android:enabled="true"
                 android:hint="Centre de formation"
-                android:inputType="textPassword"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHint="#5C6BC0"
+                tools:ignore="TextContrastCheck"
+                android:autofillHints="" />
+            <EditText
+                android:id="@+id/filiere"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/ic_baseline_menu_book_24"
+                android:drawableRight="@drawable/ic_baseline_edit_24"
+                android:drawablePadding="10dp"
+                android:enabled="true"
+                android:hint="Filière"
+                android:inputType="text"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHint="#5C6BC0"
