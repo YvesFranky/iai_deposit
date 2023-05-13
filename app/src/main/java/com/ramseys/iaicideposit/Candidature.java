@@ -15,6 +15,10 @@ public class Candidature {
         this.idCandidat = idCandidat;
     }
 
+    public Candidature() {
+
+    }
+
     public Uri getPdfUri() {
         return pdfUri;
     }
