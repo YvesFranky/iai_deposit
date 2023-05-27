@@ -1,34 +1,38 @@
 package com.ramseys.iaicideposit;
 
-import android.net.Uri;
 
 public class Candidature {
 
-    private Uri pdfUri;
-    private int Image;
+    private String pdfUri;
+    private String image;
     private String idCandidat;
     private String idGestion;
 
-    public Candidature(Uri pdfUri, int image, String idCandidat) {
+    public Candidature(String pdfUri, String image, String idCandidat, String idGestion) {
         this.pdfUri = pdfUri;
-        Image = image;
+        this.image = image;
         this.idCandidat = idCandidat;
+        this.idGestion = idGestion;
     }
 
-    public Uri getPdfUri() {
+    public Candidature() {
+
+    }
+
+    public String getPdfUri() {
         return pdfUri;
     }
 
-    public void setPdfUri(Uri pdfUri) {
+    public void setPdfUri(String pdfUri) {
         this.pdfUri = pdfUri;
     }
 
-    public int getImage() {
-        return Image;
+    public String getImage(String nothing) {
+        return image;
     }
 
-    public void setImage(int image) {
-        Image = image;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getIdCandidat() {

@@ -58,7 +58,7 @@
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/ic_baseline_lock_24"
                 android:drawablePadding="10dp"
-                android:hint="User name"
+                android:hint="Password"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:inputType="textPassword"
@@ -78,17 +78,27 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:text="Pas encore inscrit? s'incrire maintenant"
+    android:textSize="14sp"
+    android:textAlignment="center"
+    android:id="@+id/signUp"
+    android:textColor="@color/purple_500"
+    android:layout_marginTop="20dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="Pas encore inscrit? s'incrire maintenant"
+        android:text="Veuillez vous authentifier"
         android:textSize="14sp"
         android:textAlignment="center"
-        android:id="@+id/signUp"
-        android:textColor="@color/purple_500"
-        android:layout_marginTop="20dp"/>
+        android:id="@+id/notice"
+        android:textColor="@color/red"
+        android:layout_marginTop="5dp"/>
+
 
 
 </LinearLayout>

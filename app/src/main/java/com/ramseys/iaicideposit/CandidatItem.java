@@ -3,13 +3,13 @@ package com.ramseys.iaicideposit;
 import java.io.Serializable;
 
 public class CandidatItem implements Serializable {
-    private int numero;
+    private String numero;
     private String nomCadidat;
     private boolean status;
     private int image;
     private String filiere;
 
-    public CandidatItem(int numero, String nomCandidat, int image, String filiere, boolean status){
+    public CandidatItem(String numero, String nomCandidat, int image, String filiere, boolean status){
 
         this.numero = numero;
         this.nomCadidat = nomCandidat;
@@ -18,11 +18,11 @@ public class CandidatItem implements Serializable {
         this.filiere = filiere;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
