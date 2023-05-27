@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -22,8 +23,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.ramseys.iaicideposit.Admin.PdfViewer;
 
-public class CandidatDetailInfo extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener{
+public class CandidatDetailInfo extends AppCompatActivity implements View.OnClickListener{
 
     private TextView candidatName, candidatTele, candidatNaiss, filiere, centreForm, centreConcours, lieuNaiss;
     private EditText nomTuteur, telTuteur, doc;
@@ -107,7 +109,7 @@ public class CandidatDetailInfo extends AppCompatActivity implements View.OnClic
 
         valide.setOnClickListener(this);
         invalide.setOnClickListener(this);
-        doc.setOnTouchListener(this);
+        doc.setOnClickListener(this);
 
     }
 
@@ -176,16 +178,19 @@ public class CandidatDetailInfo extends AppCompatActivity implements View.OnClic
                             }
                     ).show();
                 break;
+            case R.id.document:
+                Toast.makeText(this, "Ouverture", Toast.LENGTH_SHORT).show();
+                Intent inte = new Intent(CandidatDetailInfo.this, PdfViewer.class);
+                inte.putExtra("url", doc.getText().toString());
+                startActivity(inte);
+                /*
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(doc.getText().toString()));
+                startActivity(browserIntent);*/
+                break;
             default:
                 Toast.makeText(this, "Oups", Toast.LENGTH_SHORT).show();
         }
     }
 
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        if (v.getId() == R.id.document){
-            Toast.makeText(this, "Downloading.....", Toast.LENGTH_SHORT).show();
-        }
-        return false;
-    }
+
 }

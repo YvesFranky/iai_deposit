@@ -199,7 +199,7 @@
                 android:drawableLeft="@drawable/ic_baseline_receipt_24"
                 android:drawableEnd="@drawable/ic_baseline_picture_as_pdf_24"
                 android:drawablePadding="10dp"
-                android:enabled="false"
+                android:enabled="true"
                 android:hint="Documents"
                 android:inputType="text"
                 android:padding="8dp"
