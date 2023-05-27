@@ -11,9 +11,11 @@ import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.Manifest;
+import android.provider.MediaStore;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -41,6 +43,8 @@ import com.ramseys.iaicideposit.R;
 import com.ramseys.iaicideposit.Users;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.UUID;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -50,7 +54,9 @@ public class EnrolPage extends AppCompatActivity implements View.OnClickListener
     private CircleImageView imageView;
     private ActivityResultLauncher<Intent> resultLauncher;
     public static Uri pdfData;
+    private Uri uri;
     private  final int REQ =1;
+    private final int SELECT_PHOTO= 2;
     String donwloadUri = "";
 
     FirebaseAuth firebaseAuth;
@@ -58,6 +64,8 @@ public class EnrolPage extends AppCompatActivity implements View.OnClickListener
     FirebaseStorage storage;
     StorageReference reference;
     Bundle bundle;
+
+    StorageReference storageReference;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -93,8 +101,21 @@ public class EnrolPage extends AppCompatActivity implements View.OnClickListener
 
         next.setOnClickListener(this);
         document.setOnClickListener(this);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(
+                        Intent.createChooser(
+                                intent,
+                                "Select Image from here..."),
+                        22);
+            }
+        });
     }
-
+/*
     @Override
     protected void onStart() {
         super.onStart();
@@ -113,7 +134,7 @@ public class EnrolPage extends AppCompatActivity implements View.OnClickListener
         });
 
     }
-
+*/
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.upload){
@@ -229,8 +250,92 @@ public class EnrolPage extends AppCompatActivity implements View.OnClickListener
             document.setText(data.getData().getPath());
             uploadFiles(data.getData());
         }
-    }
+        if (resultCode == 22 && resultCode == RESULT_OK && data != null && data.getData() != null){
+            uri = data.getData();
 
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                Toast.makeText(EnrolPage.this, uri.toString(),Toast.LENGTH_SHORT).show();
+                imageView.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    // UploadImage method
+    private void uploadImage()
+    {
+        if (uri != null) {
+
+            // Code for showing progressDialog while uploading
+            ProgressDialog progressDialog
+                    = new ProgressDialog(this);
+            progressDialog.setTitle("Uploading...");
+            progressDialog.show();
+
+            // Defining the child of storageReference
+            StorageReference ref
+                    = storageReference
+                    .child(
+                            "images/"
+                                    + UUID.randomUUID().toString());
+
+            // adding listeners on upload
+            // or failure of image
+            ref.putFile(uri)
+                    .addOnSuccessListener(
+                            new OnSuccessListener<UploadTask.TaskSnapshot>() {
+
+                                @Override
+                                public void onSuccess(
+                                        UploadTask.TaskSnapshot taskSnapshot)
+                                {
+
+                                    // Image uploaded successfully
+                                    // Dismiss dialog
+                                    progressDialog.dismiss();
+                                    Toast
+                                            .makeText(EnrolPage.this,
+                                                    "Image Uploaded!!",
+                                                    Toast.LENGTH_SHORT)
+                                            .show();
+                                }
+                            })
+
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e)
+                        {
+
+                            // Error, Image not uploaded
+                            progressDialog.dismiss();
+                            Toast
+                                    .makeText(EnrolPage.this,
+                                            "Failed " + e.getMessage(),
+                                            Toast.LENGTH_SHORT)
+                                    .show();
+                        }
+                    })
+                    .addOnProgressListener(
+                            new OnProgressListener<UploadTask.TaskSnapshot>() {
+
+                                // Progress Listener for loading
+                                // percentage on the dialog box
+                                @Override
+                                public void onProgress(
+                                        UploadTask.TaskSnapshot taskSnapshot)
+                                {
+                                    double progress
+                                            = (100.0
+                                            * taskSnapshot.getBytesTransferred()
+                                            / taskSnapshot.getTotalByteCount());
+                                    progressDialog.setMessage(
+                                            "Uploaded "
+                                                    + (int)progress + "%");
+                                }
+                            });
+        }
+    }
     private void uploadFiles(Uri data) {
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Chargement du dossier");
